@@ -1,0 +1,27 @@
+.search {
+  background-color: rgb(183, 225, 205);
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+  padding: 10px;
+}
+
+.search-button {
+  background-color: #2571db;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.search-text {
+  width: 100%;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid grey;
+  margin-bottom: 15px;
+}
