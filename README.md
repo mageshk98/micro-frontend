@@ -18,8 +18,77 @@ Run the `main` application firdt then run remote application one by one to see h
 
 
 <!-- 
+Main, Form, Header
+
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const { dependencies } = require("./package.json");
+
+//Main
+new ModuleFederationPlugin({
+     name: "Main",
+     remotes: {
+       Header: `Header@http://localhost:3001/moduleEntry.js`,
+       Form: `Form@http://localhost:3002/moduleEntry.js`,
+     },
+     shared: {
+       ...dependencies,
+       react: {
+         singleton: true,
+         requiredVersion: dependencies["react"],
+       },
+       "react-dom": {
+         singleton: true,
+         requiredVersion: dependencies["react-dom"],
+       },
+     },
+   }),
+
+//Form
+
+new ModuleFederationPlugin({
+     name: "Form",
+     filename: "moduleEntry.js",
+     exposes: {
+       "./App": "./src/App.js",
+       "./Button": "./src/widgets/Button.jsx",
+       "./Text": "./src/widgets/Text.jsx",
+     },
+     shared: {
+       ...dependencies,
+       react: {
+         singleton: true,
+         requiredVersion: dependencies["react"],
+       },
+       "react-dom": {
+         singleton: true,
+         requiredVersion: dependencies["react-dom"],
+       },
+     },
+   }),
+
+//header
+
+new ModuleFederationPlugin({
+     name: "Header",
+     filename: "moduleEntry.js",
+     exposes: {
+       "./App": "./src/App.js",
+       "./Search": "./src/Search.js",
+     },
+     shared: {
+       ...dependencies,
+       react: {
+         singleton: true,
+         requiredVersion: dependencies["react"],
+       },
+       "react-dom": {
+         singleton: true,
+         requiredVersion: dependencies["react-dom"],
+       },
+     },
+   }),
+
+
 
 
 -->
