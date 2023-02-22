@@ -15,3 +15,11 @@ Run the `main` application firdt then run remote application one by one to see h
 - [localhost:3000](http://localhost:3000/) (Main)
 - [localhost:3001](http://localhost:3001/) (Header)
 - [localhost:3002](http://localhost:3002/) (Form)
+
+
+<!-- 
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const { dependencies } = require("./package.json");
+
+
+-->
