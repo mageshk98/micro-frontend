@@ -1,9 +1,10 @@
 import React from "react";
 import ErrorBoundary from "./ErrorBoundary";
+// import Button from "Form/Button";
 import "./App.css";
-const Button = React.lazy(() => import("Form/Button"));
-const Text = React.lazy(() => import("Form/Text"));
-const Search = React.lazy(() => import("Header/Search"));
+// const Button = React.lazy(() => import("Form/Button"));
+// const Text = React.lazy(() => import("Form/Text"));
+// const Search = React.lazy(() => import("Header/Search"));
 
 const RemoteWrapper = ({ children }) => (
   <div
@@ -22,14 +23,14 @@ export const App = () => (
     <br />
     <RemoteWrapper>
       <h2>A Search bar from Header - Micro Frontend 1</h2>
-      <Search />
+      {/* <Search /> */}
     </RemoteWrapper>
     <br />
     <RemoteWrapper>
       <h2>App from Form - Micro frontend 2</h2>
       <form style={{ padding: "5%" }}>
-        <Text />
-        <Button>Submit</Button>
+        {/* <Text /> */}
+        {/* <Button>Submit</Button> */}
       </form>
     </RemoteWrapper>
     <br />
